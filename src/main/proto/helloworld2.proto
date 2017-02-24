@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld2";
+option java_outer_classname = "HelloWorldProto2";
+option objc_class_prefix = "HLW";
+
+package helloworld;
+
+service UserRoleService {
+    rpc getUserRoles(User) returns (Role) {}
+}
+
+message User {
+    string username = 1;
+    int32 age = 2;
+    Role role = 3;
+}
+message Role {
+    repeated string rolename = 1;
+}
