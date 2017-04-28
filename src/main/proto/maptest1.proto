@@ -8,7 +8,7 @@ option objc_class_prefix = "LRC"; // 定义生成文件的前缀
 package com.lliuruichao.maptest1;
 
 service MapTestService1 {
-    rpc getRoles(MapReqst) returns (MapReply) {}
+    rpc getRoles(MapRequest) returns (MapReply) {}
 }
 
 message MapRequest {
