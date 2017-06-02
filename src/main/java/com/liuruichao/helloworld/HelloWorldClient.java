@@ -8,6 +8,8 @@ import io.grpc.examples.helloworld.HelloRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -44,10 +46,21 @@ public class HelloWorldClient {
 
     public static void main(String[] args) throws InterruptedException {
         HelloWorldClient client = new HelloWorldClient("127.0.0.1", 50051);
-        try {
-            client.greet("liuruichao");
+        client.greet("liuruichao");
+        //ExecutorService exec = Executors.newFixedThreadPool(5);
+        /*try {
+            long start = System.currentTimeMillis();
+            for (int i = 0; i < 10000; i++) {
+                //exec.execute(() -> {
+                    client.greet("liuruichao");
+                //});
+            }
+            //exec.shutdown();
+            long end = System.currentTimeMillis();
+            System.out.println(end - start);
         } finally {
             client.shutdown();
-        }
+        }*/
+
     }
 }
